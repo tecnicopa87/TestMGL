@@ -23,6 +23,7 @@ export class ApiTestServiceService {
   urlt: string = "api/RelClienteTienda";
   urltr: string = "api/RelClienteTienda";
   urltrl: string = "api/Tienda/GetCompras";
+  
 
   constructor(private _http: HttpClient) { }
 
@@ -47,7 +48,7 @@ export class ApiTestServiceService {
 
   addcompra(compra: ClientTienda) {
     let json = JSON.stringify(compra);
-    console.log('agregar compra');
+    console.log('');
     return this._http.post<ResponseG>(this.urltr, json,httpOption);
   }
 

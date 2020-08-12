@@ -26,8 +26,8 @@ export class ComprasComponent implements OnInit {
   guardar(frm: NgForm) {
 
     var frmcollection = frm.value;
-    console.log(frmcollection);
-
+    console.log(frmcollection.idcliente);
+    console.log('cliente:'+frmcollection.cliente);
     const mitienda: ClientTienda = {
       id: 0,
       idc: frmcollection.idcliente,
@@ -39,7 +39,7 @@ export class ComprasComponent implements OnInit {
     
     this.apiService.addcompra(mitienda).subscribe(resp => {
       if (resp.Codigo = 200) {
-        this.result = resp.Id.toString();
+        this.result = "1";//resp.Id.toString();
         console.log('guardado');
       };
     },

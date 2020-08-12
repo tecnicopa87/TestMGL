@@ -41,7 +41,7 @@ export class ClientesComponent implements OnInit {
     this.apiCliente.add(cliente).subscribe(respons => {
       //alert('mandando'+cliente.nombre+' '+cliente.apellidos);
       if (respons.CodigoRespuesta == 200) {
-        this.result = respons.Id.toString();
+        this.result = "1";//respons.Id.toString();
         this.dispara = true;
         this.mostrarAlerta();
         this.apiCliente.getCliente();

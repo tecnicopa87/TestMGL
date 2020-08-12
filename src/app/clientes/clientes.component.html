@@ -1,0 +1,76 @@
+<div class="container">
+    <h4>Formulario <small> Alta clientes </small></h4>
+<hr>
+<div *ngIf="result!=''">Su No.Cliente es {{result}} 
+  <div *ngIf="dispara==true" class="col-md-12">
+    <div class="alert alert-success" role="alert" >Cliente guardado exitosamente! </div>
+</div>
+</div>
+<form autocomplete="off" (ngSubmit)="guardar(forma)" #forma="ngForm">
+  <div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Nombre</label>
+      <div class="col-8">
+<!-- name="unAtributoNombre"  <-- éste unicamente lo pide el navegador [ngModel]-->
+        <input class="form-control"
+               type="text"  
+               name="nombre"  
+               placeholder="Nombre"               
+               [class.is-invalid]="nombre.invalid && nombre.touched"               
+               [ngModel]="usuario.nombre"
+               required
+               minlength="5"
+               #nombre="ngModel">
+               <small *ngIf="nombre.invalid && nombre.touched"
+               class="form-text text-danger">Ingrese 5 letras</small>
+      </div>
+    </div>
+
+    <div class="form-group row">
+      <label class="col-2 col-form-label">Apellidos</label>
+      <div class="col-8">
+        <input class="form-control"
+               type="text"
+               name="apellidos"
+               placeholder="Apellidos"
+               [class.is-invalid]="apellidos.invalid && apellidos.touched"
+               [ngModel]="usuario.apellidos"                              
+               required
+               #apellidos="ngModel">
+               <small *ngIf="apellidos.invalid && apellidos.touched"
+               class="form-text text-danger">apellidos son obligatorios</small>
+      </div>
+    </div>
+    <div class="form-group row">
+        <label class="col-2 col-form-label"> Direccion</label>
+        <div class="col-8">
+            <input class="form-control"
+            type="text"
+            name="direccion"
+            [ngModel]="usuario.direccion"
+            required
+            #direccion="ngModel">
+  <small *ngIf="direccion.invalid && direccion.touched"
+                 class="form-text text-danger">direccion es un campo obligatorio</small>
+          <input class="form-control"
+                 type="text"                   
+                 placeholder="Direccion"                                                                                 
+                 >                 
+        </div>
+      </div>
+  
+
+  </div>  
+
+  <div class="form-group row">
+    <label class="col-2 col-form-label">&nbsp;</label>
+    <div class="input-group col-md-8">
+      <button type="submit" class="btn btn-outline-primary btn-block">
+        Guardar
+      </button>
+    </div>
+  </div>
+
+</form>
+</div>

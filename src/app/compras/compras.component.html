@@ -1,0 +1,36 @@
+<div>
+    <p>Compras a tienda</p>
+    <div *ngIf="result!='0'">Se guardó correctamente</div>
+    <form (ngSubmit)="guardar(frm)" #frm="ngForm">
+        
+        <div class="form-group row">
+            <label class="col-2 col-form-label">ID :</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="idcliente" [ngModel]="compra.idcliente" #idcliente="ngModel" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Cliente</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="cliente" [ngModel]="compra.cliente" #cliente="ngModel" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Tienda</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="tienda" [ngModel]="compra.tienda" #tienda="ngModel" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Monto</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="monto" [ngModel]="compra.monto" #monto="ngModel" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <button type="submit">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,22 @@
+<div>
+    <p>tienda works!</p>
+    <form (gSubmit)="guardar(form)" #form>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Sucursal</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="sucursal" [ngModel]="tienda.sucursal" #suc="ngModel">
+            </div>
+        </div>
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Direccion</label>
+            <div class="col-8">
+                <input class="form-control" type="text" name="dir" [ngModel]="tienda.direccion" #dir="ngModel">
+            </div>
+        </div>
+        <div class="form-group row">
+            <div class="col-8">
+                <button type="submit">Guardar</button>
+            </div>
+        </div>
+    </form>
+</div>

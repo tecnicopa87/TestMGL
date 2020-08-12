@@ -62,7 +62,8 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "clienteMLG:build"
+            "browserTarget": "clienteMLG:build",
+            "proxyConfig": "src/proxy.conf.json"
           },
           "configurations": {
             "production": {
@@ -119,6 +120,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "clienteMLG"
+    }
+  },
+  "defaultProject": "clienteMLG",
+  "cli": {
+    "analytics": false
+  }
 }

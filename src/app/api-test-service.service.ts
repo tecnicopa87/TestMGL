@@ -51,6 +51,10 @@ export class ApiTestServiceService {
     return this._http.post<ResponseG>(this.urltr, json,httpOption);
   }
 
+  editcompra(compra: ClientTienda) {
+    let json = JSON.stringify(compra);    
+    return this._http.put<ResponseG>(this.urltr, json,httpOption);
+  }
   // getcompras() {
   //   //let listado;
   //   return this._http.get<ICompras>(this.urltrl,);

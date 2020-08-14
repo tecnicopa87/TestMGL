@@ -39,11 +39,34 @@ export class ComprasComponent implements OnInit {
     
     this.apiService.addcompra(mitienda).subscribe(resp => {
       if (resp.Codigo = 200) {
-        this.result = resp.Id.toString();
+        this.result ="1";// resp.Id.toString();
         console.log('guardado');
       };
     },
       resp => console.log('error al insertar compra,' + resp['Error']));
+    // })
+  }
+  modificar(frm: NgForm) {
+
+    var frmcollection = frm.value;
+    console.log(frmcollection);
+
+    const mitienda: ClientTienda = {
+      id: 0,
+      idc: frmcollection.idcliente,
+      cliente: frmcollection.cliente,
+      tienda: frmcollection.tienda,
+      monto: frmcollection.monto,
+      fecha: new Date(),
+    };
+    
+    this.apiService.editcompra(mitienda).subscribe(resp => {
+      if (resp.Codigo = 200) {
+        this.result ="1";// resp.Id.toString();
+        console.log('guardado');
+      };
+    },
+      resp => console.log('error al editar compra,' + resp['Error']));
     // })
   }
 }
